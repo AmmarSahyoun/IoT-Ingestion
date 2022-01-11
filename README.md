@@ -13,6 +13,6 @@ sensors.
 
 
 
-Solarized dark             |  Solarized Ocean
+Set up            |  Configuration
 :-------------------------:|:-------------------------:
-<img src="pics\sens.jpg" />  |  <img src="pics\sens.jpg" />
+<img src="pics\sens.jpg" />  |  <img src="pics\sensors.jpg" />
