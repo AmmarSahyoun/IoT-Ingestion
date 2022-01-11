@@ -3,11 +3,11 @@ Green House sensors_Alnarp
 
 
 
-<img align="center" alt="LoRaWAN" width="60px" src="pics\LoRawan.jpg" />
+<img align="center" alt="LoRaWAN" src="pics\LoRawan.jpg" />
 #
 *
-<img align="center" alt="LoRaWAN" width="60px" src="pics\sens.jpg" />
-<img align="center" alt="LoRaWAN" width="60px" src="pics\sensons.jpg" />
+<img align="center" alt="LoRaWAN" src="pics\sens.jpg" />
+<img align="center" alt="LoRaWAN" src="pics\sensons.jpg" />
 
 
 
