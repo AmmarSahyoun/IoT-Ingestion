@@ -62,3 +62,21 @@ def saveToFile(json_file):
 		fw = csv.writer(tabFile, dialect='excel-tab')
 		fw.writerow([received_at, f_port, f_cnt, frm_payload, rssi, snr, data_rate_index, consumed_airtime])
 
+
+# MQTT event functions
+def on_connect(mqttc, obj, flags, rc):
+	print("\nConnect: rc = " + str(rc))
+
+def on_message(mqttc, obj, msg):
+    print("\nMessage: " + msg.topic + " " + str(msg.qos)) # + " " + str(msg.payload))
+    parsedJSON = json.loads(msg.payload)
+    #print(json.dumps(parsedJSON, indent=4))	# Uncomment this to fill your terminal screen with JSON
+    saveToFile(parsedJSON)
+
+def on_subscribe(mqttc, obj, mid, granted_qos):
+    print("\nSubscribe: " + str(mid) + " " + str(granted_qos))
+
+def on_log(mqttc, obj, level, string):
+    print("\nLog: "+ string)
+    logging_level = mqtt.LOGGING_LEVEL[level]
+    logging.log(logging_level, string)
