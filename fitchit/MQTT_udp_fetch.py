@@ -38,4 +38,27 @@ def saveToFile(json_file):
 		fw = csv.writer(tabFile, dialect='excel-tab')
 		fw.writerow([received_at, application_id, device_id, f_port, f_cnt, frm_payload, rssi, snr, data_rate_index, consumed_airtime])
 
+	# Application log
+	pathNFile = application_id + ".txt"
+	print(pathNFile)
+	if (not os.path.isfile(pathNFile)):
+		with open(pathNFile, 'a', newline='') as tabFile:
+			fw = csv.writer(tabFile, dialect='excel-tab')
+			fw.writerow(["received_at", "device_id", "f_port", "f_cnt", "frm_payload", "rssi", "snr", "data_rate_index", "consumed_airtime"])
+
+	with open(pathNFile, 'a', newline='') as tabFile:
+		fw = csv.writer(tabFile, dialect='excel-tab')
+		fw.writerow([received_at, device_id, f_port, f_cnt, frm_payload, rssi, snr, data_rate_index, consumed_airtime])
+
+	# Device log
+	pathNFile = application_id + "__" + device_id + ".txt"
+	print(pathNFile)
+	if (not os.path.isfile(pathNFile)):
+		with open(pathNFile, 'a', newline='') as tabFile:
+			fw = csv.writer(tabFile, dialect='excel-tab')
+			fw.writerow(["received_at", "f_port", "f_cnt", "frm_payload", "rssi", "snr", "data_rate_index", "consumed_airtime"])
+
+	with open(pathNFile, 'a', newline='') as tabFile:
+		fw = csv.writer(tabFile, dialect='excel-tab')
+		fw.writerow([received_at, f_port, f_cnt, frm_payload, rssi, snr, data_rate_index, consumed_airtime])
 
