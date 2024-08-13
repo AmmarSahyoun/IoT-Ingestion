@@ -1,4 +1,4 @@
-""" extract data from the IoT_api, transform to dataframe and save in a report """
+""" extract data from the IoT_api, transform to dataframe and save in a csv report """
 
 import os, requests, json, csv 
 from datetime import datetime
@@ -43,7 +43,6 @@ def main():
             
         df_rows.append({'sensor':device_id, 'temperature':temperature, 'battery':battery, 'humidity':humidity, 'rssi':rssi, 'received_at':received_at})
     df = df.append(df_rows, ignore_index=True)
-
 
 
 
