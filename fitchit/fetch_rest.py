@@ -41,5 +41,6 @@ def get_report():
             output = csv.writer(output, dialect='excel-tab')
             output.writerow([device_id, temperature, battery, humidity, rssi, received_at])
 
+
 if __name__ == '__main__':
     get_report()
